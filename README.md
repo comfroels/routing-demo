@@ -3,6 +3,10 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.2.
 
 ## Development server
+Run `npm install -g angular-cli@webpack`. This will install `angular-cli` globally.
+
+Run `npm install` inside the project directory.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding

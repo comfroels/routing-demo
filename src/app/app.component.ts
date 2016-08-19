@@ -11,7 +11,7 @@ import { StateService } from './state.service';
 })
 export class AppComponent {
   title: string = 'Routing Demo works!';
-  stateChanges: number;
+  stateChanges: number = 0;
   constructor(public stateService: StateService, @Inject('Window') public window: Window) {
     this.stateChanges = this.stateService.getStateChange();
     this.window.onpopstate = function (evt) {
@@ -20,15 +20,15 @@ export class AppComponent {
     }.bind(this);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.stateChanges = this.stateService.getStateChange();
   }
 
-  updateStateChanges() {
+  updateStateChanges(): void {
     this.stateChanges = this.stateService.getStateChange();
   }
 
-  newStateChange() {
+  newStateChange(): void {
     this.stateService.addStateChange();
     this.updateStateChanges();
   }

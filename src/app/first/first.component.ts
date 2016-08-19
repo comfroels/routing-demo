@@ -15,7 +15,11 @@ export class FirstComponent implements OnInit {
     
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.stateChanges = this.stateService.getStateChange();
+  }
+
+  ngDoCheck(): void{
     this.stateChanges = this.stateService.getStateChange();
   }
 

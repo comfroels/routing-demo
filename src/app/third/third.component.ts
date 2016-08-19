@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../state.service';
 
 @Component({
   selector: 'app-third',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['third.component.css']
 })
 export class ThirdComponent implements OnInit {
+  title: string = 'Third component works!';
+  stateChanges: number = 0;
 
-  constructor() { }
+  constructor(private stateService: StateService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.stateChanges = this.stateService.getStateChange();
+  }
+
+  ngDoCheck(): void{
+    this.stateChanges = this.stateService.getStateChange();
   }
 
 }
